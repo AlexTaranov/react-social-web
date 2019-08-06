@@ -1,0 +1,31 @@
+.l-main {
+    &-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-rows: 60px 1fr;
+        grid-template-columns: 2fr 10fr;
+        grid-gap: 10px;
+        grid-template-areas:
+                "header header"
+                "sidebar content";
+    }
+    
+    &-header {
+        grid-area: header;
+        
+        background: green;
+    }
+    
+    &-aside {
+        grid-area: sidebar;
+        
+        background: red;
+    }
+    
+    &-wrap {
+        grid-area: content;
+        
+        background: orange;
+    }
+}

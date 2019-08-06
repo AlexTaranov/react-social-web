@@ -1,0 +1,28 @@
+
+
+.b-profile {
+    &-head {
+        height: 150px;
+        
+        &_img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    
+    &-info {
+    
+    }
+    
+    &-info_figure {
+        width: 100px;
+        height: 100px;
+    }
+    
+    &-info_img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

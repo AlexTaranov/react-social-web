@@ -1,26 +1,26 @@
 
 
-.b-profile {
-    &-head {
+.b_profile {
+    &_head {
         height: 150px;
         
-        &_img {
+        &__img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
     }
     
-    &-info {
+    &_info {
     
     }
     
-    &-info_figure {
+    &_info__figure {
         width: 100px;
         height: 100px;
     }
     
-    &-info_img {
+    &_info__img {
         width: 100%;
         height: 100%;
         object-fit: cover;

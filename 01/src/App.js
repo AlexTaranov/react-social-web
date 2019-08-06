@@ -8,19 +8,19 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-        <div className="l-main">
-            <div className="l-main-container">
-                <div className="l-main-header">
+        <div className="l_main">
+            <div className="l_main_container">
+                <div className="l_main_header">
                     <Header />
                 </div>
-                <div className="l-main-aside">
+                <div className="l_main_aside">
                     <Aside />
                 </div>
-                <div className="l-main-wrap">
+                <div className="l_main_wrap">
                     <Profile />
                 </div>
             </div>
-            <div className="l-main-footer">
+            <div className="l_main_footer">
                 <Footer />
             </div>
         </div>

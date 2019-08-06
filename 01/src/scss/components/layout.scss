@@ -1,5 +1,5 @@
-.l-main {
-    &-container {
+.l_main {
+    &_container {
         max-width: 1100px;
         margin: 0 auto;
         display: grid;
@@ -11,21 +11,21 @@
                 "sidebar content";
     }
     
-    &-header {
+    &_header {
         grid-area: header;
         
-        background: green;
+        border: 1px solid #000;
     }
     
-    &-aside {
+    &_aside {
         grid-area: sidebar;
-        
-        background: red;
+    
+        background-color: blue;
     }
     
-    &-wrap {
+    &_wrap {
         grid-area: content;
-        
-        background: orange;
+    
+        border: 1px solid #000;
     }
 }

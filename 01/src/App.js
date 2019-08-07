@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Header from './components/header';
-import Footer from './components/footer';
-import Profile from './components/profile';
-import Aside from './components/aside';
+import Header from './components/header/header';
+import Footer from './components/footer/footer';
+import Profile from './components/profile/profile';
+import Sidebar from './components/sidebar/sidebar';
 import './App.css';
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
                     <Header />
                 </div>
                 <div className="l_main_aside">
-                    <Aside />
+                    <Sidebar />
                 </div>
                 <div className="l_main_wrap">
                     <Profile />

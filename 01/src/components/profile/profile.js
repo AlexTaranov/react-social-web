@@ -9,7 +9,12 @@ const Profile = () => {
                 <img src="https://images11.popmeh.ru/upload/img_cache/33b/33bb184b5d125708c50e761639a74ee9_ce_990x660x0x0_cropped_800x427.jpg" alt="" className="b_profile_head__img"/>
             </div>
 
-            <InfoPerson />
+            <InfoPerson
+                avaprofile={'http://www.spletnik.ru/img/__post/68/68cd2b706c1fe59dc8df7e58a1655546_300.jpg'}
+                nameprofile={'Alexander Taranov'}
+                position={'FE DEV'}
+                interests={'Cars'}
+            />
 
             <div className="b_profile_list">
 

@@ -8,8 +8,17 @@
 
 .b_nav_list {
     padding: 10px 0;
+    
+    &__item {
+        padding: 5px 20px;
+    }
+    
+    &__link {
+        color: black;
+        
+        &.m-active {
+            color: green;
+        }
+    }
 }
 
-.b_nav_list__item {
-    padding: 5px 20px;
-}

@@ -1,0 +1,75 @@
+.b_dialogs {
+    padding: 20px;
+    
+    &__title {
+        min-width: 100%;
+        flex-basis: 100%;
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 20px;
+        grid-area: header;
+    }
+    
+    &__wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+                'header header header'
+                'sidebar main main';
+    }
+    
+    &__list_wrap {
+        border-right: 1px solid #000;
+        grid-area: sidebar;
+    }
+    
+    &__conversation_wrap {
+        grid-area: main;
+    }
+    
+    &__list_contact {
+    
+    }
+    
+    &__list_item {
+        padding: 10px 0;
+    }
+    
+    &__list_link {
+        color: gray;
+        
+        &.m-active {
+            color: red;
+        }
+    }
+    
+    &__conversation {
+        padding-left: 10px;
+    }
+}
+
+.b_message {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-column-gap: 10px;
+    margin-bottom: 10px;
+    
+    &.m-my {
+        padding-left: 20px;
+    }
+    
+    &__thumbnail {
+        margin-bottom: 5px;
+    }
+    
+    &__thumbnail_img {
+        width: 100%;
+    }
+    
+    &__thumbnail_name {
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+    }
+}

@@ -16,10 +16,6 @@ const Profile = () => {
                 interests={'Cars'}
             />
 
-            <div className="b_profile_list">
-
-            </div>
-
             <ListPosts/>
         </main>
     );

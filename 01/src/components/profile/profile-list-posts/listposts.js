@@ -3,7 +3,7 @@ import UserPost from '../profile-userposts/userpost';
 
 const ListPosts = (props) => {
 
-    let postsList = props.postsMassive.map(p => <UserPost idPost={p.idPost} message={p.message} likesCount={p.likesCount} avatar={p.avatar}/> );
+    let postsList = props.posts.map(p => <UserPost idPost={p.idPost} message={p.message} likesCount={p.likesCount} avatar={p.avatar}/> );
 
     return (
         <div className="b_posts">

@@ -4,7 +4,6 @@ import ListPosts from './profile-list-posts/listposts';
 
 const Profile = (props) => {
 
-
     return (
         <main className="b_profile">
             <div className="b_profile_head">
@@ -18,7 +17,7 @@ const Profile = (props) => {
                 interests={'Cars'}
             />
 
-            <ListPosts postsMassive={props.profileDataPosts} />
+            <ListPosts posts={props.posts} />
 
         </main>
     );

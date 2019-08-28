@@ -22,7 +22,7 @@ const App = (props) => {
                         <Sidebar />
                     </div>
                     <div className="l_main_wrap">
-                        <Route path='/profile' render={() => <Profile profileDataPosts={props.numberPosts} />} />
+                        <Route path='/profile' render={() => <Profile posts={props.posts} />} />
                         <Route path='/dialogs' render={() => <Dialogs />} />
                         <Route path='/news' render={() => <News />} />
                         <Route path='/music' render={() => <Music />} />

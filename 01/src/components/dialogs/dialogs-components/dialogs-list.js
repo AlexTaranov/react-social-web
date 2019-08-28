@@ -9,24 +9,11 @@ const DialogsList = (props) => {
         {idAuthor: 4, nameauthor: 'Vasiliy'},
         ]
 
+    let authorList = dialogsData.map(a => <DialogsAuthor nameauthor={a.nameauthor} authorid={a.idAuthor}/>);
+
     return (
         <ul className="b_dialogs__list_contact">
-            <DialogsAuthor
-                nameauthor={dialogsData[0].nameauthor}
-                authorid={dialogsData[0].idAuthor}
-            />
-            <DialogsAuthor
-                nameauthor={dialogsData[1].nameauthor}
-                authorid={dialogsData[1].idAuthor}
-            />
-            <DialogsAuthor
-                nameauthor={'Alexander'}
-                authorid={'3'}
-            />
-            <DialogsAuthor
-                nameauthor={'Vasiliy'}
-                authorid={'4'}
-            />
+            {authorList}
         </ul>
     );
 }

@@ -23,7 +23,7 @@ const App = (props) => {
                     </div>
                     <div className="l_main_wrap">
                         <Route path='/profile' render={() => <Profile posts={props.posts} />} />
-                        <Route path='/dialogs' render={() => <Dialogs />} />
+                        <Route path='/dialogs' render={() => <Dialogs dialogs={props.dialogs} msgs={props.msgs} />} />
                         <Route path='/news' render={() => <News />} />
                         <Route path='/music' render={() => <Music />} />
                         <Route path='/settings' render={() => <Settings />} />

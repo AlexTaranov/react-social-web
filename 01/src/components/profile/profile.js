@@ -2,7 +2,12 @@ import React from 'react';
 import InfoPerson from './profile-infoperson/infoperson';
 import ListPosts from './profile-list-posts/listposts';
 
-const Profile = () => {
+const Profile = (props) => {
+    let postData = [
+        {idPost: 1, message: 'Hello, its my first Post?', likesCount: "32", avatar: 'http://gameszon.net/content/cats-img/avatar3.png'},
+        {idPost: 1, message: 'Very good', likesCount: "25", avatar: 'https://writercenter.ru/uploads/images/01/80/70/2017/07/01/avatar_ratsh_194510_64x64.jpg'}
+    ]
+
     return (
         <main className="b_profile">
             <div className="b_profile_head">
@@ -16,7 +21,8 @@ const Profile = () => {
                 interests={'Cars'}
             />
 
-            <ListPosts/>
+            <ListPosts postsMassive={postData} />
+
         </main>
     );
 }

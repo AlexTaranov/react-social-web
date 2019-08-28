@@ -9,6 +9,7 @@ const DialogsAuthor = (props) => {
             <NavLink
                 className="b_dialogs__list_link"
                 activeClassName="m-active"
+                id={props.authorid}
                 to={path} >
                     {props.nameauthor}
             </NavLink>

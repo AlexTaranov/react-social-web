@@ -1,6 +1,6 @@
 import React from 'react';
-import DialogsList from './dialogs-components/dialogs-list';
-import DialogsConversations from './dialogs-components/dialogs-conversations';
+import DialogsList from './dialogs-authors/dialogs-list';
+import DialogsConversations from './dialogs-conversations/dialogs-conversations';
 
 const Dialogs = (props) => {
     return (

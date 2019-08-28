@@ -1,6 +1,6 @@
 import React from 'react';
-import InfoPerson from './profile-components/infoperson';
-import ListPosts from './profile-components/listposts';
+import InfoPerson from './profile-infoperson/infoperson';
+import ListPosts from './profile-list-posts/listposts';
 
 const Profile = () => {
     return (

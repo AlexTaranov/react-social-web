@@ -1,5 +1,5 @@
 import React from 'react';
-import UserPost from './userpost';
+import UserPost from '../profile-userposts/userpost';
 
 const ListPosts = (props) => {
     let postData = [

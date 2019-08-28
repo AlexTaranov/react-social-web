@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route, BrowserRouter } from 'react-router-dom';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
@@ -10,8 +10,7 @@ import Settings from './components/settings/settings';
 import Sidebar from './components/sidebar/sidebar';
 import './App.css';
 
-class App extends Component {
-  render() {
+const App = (props) => {
     return (
         <BrowserRouter>
             <div className="l_main">
@@ -23,7 +22,7 @@ class App extends Component {
                         <Sidebar />
                     </div>
                     <div className="l_main_wrap">
-                        <Route path='/profile' render={() => <Profile />} />
+                        <Route path='/profile' render={() => <Profile profileDataPosts={props.numberPosts} />} />
                         <Route path='/dialogs' render={() => <Dialogs />} />
                         <Route path='/news' render={() => <News />} />
                         <Route path='/music' render={() => <Music />} />
@@ -37,6 +36,5 @@ class App extends Component {
         </BrowserRouter>
     );
   }
-}
 
 export default App;

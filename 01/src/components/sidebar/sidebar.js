@@ -1,7 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
+import Friends from './friends/friends';
 
-const Aside = () => {
+const Sidebar = (props) => {
     return (
         <aside className="b_sidebar">
             <nav className="b_nav">
@@ -23,8 +24,12 @@ const Aside = () => {
                     </li>
                 </ul>
             </nav>
+
+            <section className="l-friends">
+                <Friends friendsState={props.stateSidebar.sidebarFriends} />
+            </section>
         </aside>
     );
 }
 
-export default Aside;
+export default Sidebar;

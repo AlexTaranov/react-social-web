@@ -19,11 +19,11 @@ const App = (props) => {
                         <Header />
                     </div>
                     <div className="l_main_aside">
-                        <Sidebar />
+                        <Sidebar stateSidebar={props.appState.sidebarData} />
                     </div>
                     <div className="l_main_wrap">
-                        <Route path='/profile' render={() => <Profile posts={props.posts} />} />
-                        <Route path='/dialogs' render={() => <Dialogs dialogs={props.dialogs} msgs={props.msgs} />} />
+                        <Route path='/profile' render={() => <Profile stateProfile={props.appState.profilePage} />} />
+                        <Route path='/dialogs' render={() => <Dialogs stateMesseges={props.appState.messegesPage} />}/>
                         <Route path='/news' render={() => <News />} />
                         <Route path='/music' render={() => <Music />} />
                         <Route path='/settings' render={() => <Settings />} />

@@ -17,7 +17,7 @@ const Profile = (props) => {
                 interests={'Cars'}
             />
 
-            <ListPosts posts={props.posts} />
+            <ListPosts posts={props.stateProfile.PostData} />
 
         </main>
     );

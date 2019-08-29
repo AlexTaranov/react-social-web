@@ -1,0 +1,21 @@
+
+.b-friends {
+    padding: 0 10px;
+    
+    &__title {
+        padding: 30px 10px 20px;
+    }
+    
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 3px;
+        text-align: center;
+    }
+    
+    &__name {
+        font-size: 10px;
+        line-height: 1.2em;
+    }
+    
+}

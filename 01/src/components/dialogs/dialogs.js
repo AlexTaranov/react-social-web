@@ -8,10 +8,10 @@ const Dialogs = (props) => {
             <div className="b_dialogs__wrap">
                 <h1 className="b_dialogs__title">Dialogs</h1>
                 <section className="b_dialogs__list_wrap">
-                    <DialogsList dialogs={props.dialogs} />
+                    <DialogsList dialogs={props.stateMesseges.dialogsData} />
                 </section>
                 <section className="b_dialogs__conversation_wrap">
-                    <DialogsConversations msgs={props.msgs}/>
+                    <DialogsConversations msgs={props.stateMesseges.messageData}/>
                 </section>
             </div>
         </main>

@@ -3,7 +3,6 @@ import InfoPerson from './profile-infoperson/infoperson';
 import ListPosts from './profile-list-posts/listposts';
 
 const Profile = (props) => {
-
     return (
         <main className="b_profile">
             <div className="b_profile_head">
@@ -17,7 +16,7 @@ const Profile = (props) => {
                 interests={'Cars'}
             />
 
-            <ListPosts posts={props.stateProfile.PostData} />
+            <ListPosts posts={props.stateProfile.postData} />
 
         </main>
     );

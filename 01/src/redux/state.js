@@ -6,6 +6,9 @@ let appState = {
             {idPost: 1, message: 'Hello, its my first Post?', likesCount: "32", avatar: 'http://gameszon.net/content/cats-img/avatar3.png'},
             {idPost: 2, message: 'Very good', likesCount: "25", avatar: 'https://writercenter.ru/uploads/images/01/80/70/2017/07/01/avatar_ratsh_194510_64x64.jpg'},
             {idPost: 3, message: 'Very good 2222', likesCount: "31", avatar: 'http://gameszon.net/content/cats-img/avatar3.png'}
+        ],
+        profileData: [
+            {profileName: 'Alexander Taranov', profileInterest: 'Hello, its my first Post?', profilePosition: "FE DEV", profileAvatar: 'http://www.spletnik.ru/img/__post/68/68cd2b706c1fe59dc8df7e58a1655546_300.jpg'}
         ]
     },
     messegesPage: {
@@ -22,10 +25,10 @@ let appState = {
     },
     sidebarData: {
         sidebarFriends: [
-            {id: 1, link: '#', avatar: 'https://materiell.com/wp-content/uploads/2015/04/deven-small1.png', name: 'Alex'},
-            {id: 2, link: '#', avatar: 'https://materiell.com/wp-content/uploads/2015/04/deven-small1.png', name: 'Alex'},
-            {id: 3, link: '#', avatar: 'https://materiell.com/wp-content/uploads/2015/04/deven-small1.png', name: 'Alex'},
-            {id: 4, link: '#', avatar: 'https://materiell.com/wp-content/uploads/2015/04/deven-small1.png', name: 'Alex'}
+            {id: 1, link: '#', avatar: 'https://materiell.com/wp-content/uploads/2015/04/deven-small1.png', name: 'Alex1'},
+            {id: 2, link: '#', avatar: 'https://materiell.com/wp-content/uploads/2015/04/deven-small1.png', name: 'Alex2'},
+            {id: 3, link: '#', avatar: 'https://materiell.com/wp-content/uploads/2015/04/deven-small1.png', name: 'Alex3'},
+            {id: 4, link: '#', avatar: 'https://materiell.com/wp-content/uploads/2015/04/deven-small1.png', name: 'Alex4'}
         ]
     }
 }

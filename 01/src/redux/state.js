@@ -36,7 +36,7 @@ let appState = {
 export let addPost = (postMessage) => {
 
     let newPost = {
-        id: 5,
+        idPost: 5,
         message: postMessage,
         likesCount: '24',
         avatar: 'https://writercenter.ru/uploads/images/01/80/70/2017/07/01/avatar_ratsh_194510_64x64.jpg'

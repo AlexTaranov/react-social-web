@@ -19,7 +19,7 @@ const ListPosts = (props) => {
             <h2 className="b_posts__title">My Posts</h2>
             <div className="b_posts__newpost">
                 <textarea ref={newPostElement} name="mymsg" id="mymsg" placeholder="your news" className="b_posts__newmsg"></textarea>
-                <button className="b_posts__newsubmit" onClick={addPost}>Send</button>
+                <button className="b_posts__newsubmit" onClick={addPost}>New Post</button>
             </div>
 
             <div className="b_posts__list">

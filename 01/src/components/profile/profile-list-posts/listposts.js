@@ -9,16 +9,19 @@ const ListPosts = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
+        props.addPost(props.newPostText);
+    }
+
+    let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.addPost(text);
-        newPostElement.current.value = '';
+        props.updateNewPostText(text);
     }
 
     return (
         <div className="b_posts">
             <h2 className="b_posts__title">My Posts</h2>
             <div className="b_posts__newpost">
-                <textarea ref={newPostElement} name="mymsg" id="mymsg" placeholder="your news" className="b_posts__newmsg"></textarea>
+                <textarea ref={newPostElement} name="mymsg" value={props.newPostText} onChange={onPostChange} id="mymsg" placeholder="your news" className="b_posts__newmsg" />
                 <button className="b_posts__newsubmit" onClick={addPost}>New Post</button>
             </div>
 

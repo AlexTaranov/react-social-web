@@ -9,7 +9,8 @@ let appState = {
         ],
         profileData: [
             {profileName: 'Alexander Taranov', profileInterest: 'Cars?', profilePosition: "FE DEV", profileAvatar: 'http://www.spletnik.ru/img/__post/68/68cd2b706c1fe59dc8df7e58a1655546_300.jpg'}
-        ]
+        ],
+        newPostText: 'it-kamasutra.com'
     },
     messegesPage: {
         dialogsData: [
@@ -33,17 +34,25 @@ let appState = {
     }
 }
 
-export let addPost = (postMessage) => {
+window.state = appState;
+
+export let addPost = () => {
 
     let newPost = {
         idPost: 5,
-        message: postMessage,
+        message: appState.profilePage.newPostText,
         likesCount: '24',
         avatar: 'https://writercenter.ru/uploads/images/01/80/70/2017/07/01/avatar_ratsh_194510_64x64.jpg'
     }
     appState.profilePage.postData.push(newPost);
-
+    appState.profilePage.newPostText = '';
     rerenderPage(appState);
 };
+
+export let updateNewPostText = (newText) => {
+    appState.profilePage.newPostText = newText;
+    rerenderPage(appState);
+}
+
 
 export default appState;

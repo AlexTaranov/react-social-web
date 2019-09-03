@@ -1,4 +1,4 @@
-
+import {rerenderPage} from "../render";
 
 let appState = {
     profilePage: {
@@ -8,7 +8,7 @@ let appState = {
             {idPost: 3, message: 'Very good 2222', likesCount: "31", avatar: 'http://gameszon.net/content/cats-img/avatar3.png'}
         ],
         profileData: [
-            {profileName: 'Alexander Taranov', profileInterest: 'Hello, its my first Post?', profilePosition: "FE DEV", profileAvatar: 'http://www.spletnik.ru/img/__post/68/68cd2b706c1fe59dc8df7e58a1655546_300.jpg'}
+            {profileName: 'Alexander Taranov', profileInterest: 'Cars?', profilePosition: "FE DEV", profileAvatar: 'http://www.spletnik.ru/img/__post/68/68cd2b706c1fe59dc8df7e58a1655546_300.jpg'}
         ]
     },
     messegesPage: {
@@ -32,5 +32,18 @@ let appState = {
         ]
     }
 }
+
+export let addPost = (postMessage) => {
+
+    let newPost = {
+        id: 5,
+        message: postMessage,
+        likesCount: '24',
+        avatar: 'https://writercenter.ru/uploads/images/01/80/70/2017/07/01/avatar_ratsh_194510_64x64.jpg'
+    }
+    appState.profilePage.postData.push(newPost);
+
+    rerenderPage(appState);
+};
 
 export default appState;

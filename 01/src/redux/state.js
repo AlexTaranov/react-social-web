@@ -1,4 +1,6 @@
-import {rerenderPage} from "../render";
+let rerenderPage = () => {
+    console.log('rerender Page');
+}
 
 let appState = {
     profilePage: {
@@ -36,7 +38,7 @@ let appState = {
 
 window.state = appState;
 
-export let addPost = () => {
+export const addPost = () => {
 
     let newPost = {
         idPost: 5,
@@ -49,9 +51,13 @@ export let addPost = () => {
     rerenderPage(appState);
 };
 
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
     appState.profilePage.newPostText = newText;
     rerenderPage(appState);
+}
+
+export const subscribe = (observer) => {
+    rerenderPage = observer;
 }
 
 

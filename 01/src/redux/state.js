@@ -24,7 +24,8 @@ let appState = {
         messageData: [
             {authorava: 'https://wpjournalist.nl/wp-content/uploads/2019/03/avatar-jongen-voorbeeld-1.jpg', authorname: 'Valera', authormsg: 'Hello its my message for you!'},
             {authorava: 'https://images.vexels.com/media/users/3/145908/preview2/52eabf633ca6414e60a7677b0b917d92-male-avatar-maker.jpg', authorname: 'Me', authormsg: 'Hey, men! Nice to meet you.'},
-        ]
+        ],
+        newMsgText: 'it-kamasutra.com-MSG'
     },
     sidebarData: {
         sidebarFriends: [
@@ -53,6 +54,24 @@ export const addPost = () => {
 
 export const updateNewPostText = (newText) => {
     appState.profilePage.newPostText = newText;
+    rerenderPage(appState);
+}
+
+
+export const addMsg = () => {
+    let newMsg = {
+        authorava: 'https://wpjournalist.nl/wp-content/uploads/2019/03/avatar-jongen-voorbeeld-1.jpg',
+        authorname: 'Valera',
+        authormsg: appState.messegesPage.newMsgText
+    }
+
+    appState.messegesPage.messageData.push(newMsg);
+    appState.messegesPage.newMsgText = '';
+    rerenderPage(appState);
+};
+
+export const updateNewMessageText = (newText) => {
+    appState.messegesPage.newMsgText = newText;
     rerenderPage(appState);
 }
 

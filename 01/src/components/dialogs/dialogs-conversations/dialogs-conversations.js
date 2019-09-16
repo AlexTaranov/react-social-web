@@ -8,12 +8,12 @@ const DialogsConversations = (props) => {
     let newMsgElement = React.createRef();
 
     let addMsg = () => {
-        props.addMsg(props.newMsgText);
+        props.dispatch({type: 'ADD-MSG'});
     }
 
     let onMsgChange = () => {
         let text = newMsgElement.current.value;
-        props.updateNewMessageText(text);
+        props.dispatch({type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text});
     }
 
     return (

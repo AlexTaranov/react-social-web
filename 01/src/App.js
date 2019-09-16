@@ -24,13 +24,11 @@ const App = (props) => {
                     <div className="l_main_wrap">
                         <Route path='/profile' render={() => <Profile
                             stateProfilePage={props.appState.profilePage}
-                            addPost={props.addPost}
-                            updateNewPostText={props.updateNewPostText}/>}
+                            dispatch={props.dispatch}/>}
                             />
                         <Route path='/dialogs' render={() => <Dialogs
-                            stateMesseges={props.appState.messegesPage}
-                            addMsg={props.addMsg}
-                            updateNewMessageText={props.updateNewMessageText}/>
+                            stateMessegesPage={props.appState.messegesPage}
+                            dispatch={props.dispatch}/>
                         }/>
                         <Route path='/news' render={() => <News />} />
                         <Route path='/music' render={() => <Music />} />

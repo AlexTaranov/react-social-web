@@ -7,17 +7,12 @@ import store from "./redux/state";
 let rerenderPage = (appState) => {
     ReactDOM.render(
         <App
-            appState={appState}
-            // addPost={store.addPost.bind(store)}
-            // updateNewPostText={store.updateNewPostText.bind(store)}
-            // addMsg={store.addMsg.bind(store)}
-            // updateNewMessageText={store.updateNewMessageText.bind(store)}
-            dispatch={store.dispatch.bind(store)} />,
+            appState={appState} //
+            dispatch={store.dispatch.bind(store)} />, // передаем в диспатч окружение store, не понял зачем здесь
+
         document.getElementById('root')
     );
 }
 
-
-rerenderPage(store.getState());
-
-store.subscribe(rerenderPage);
+rerenderPage(store.getState()); // выполняем функцию ререндеринга страницы с получением всего стейта с помощью функции которая ретурнит его
+store.subscribe(rerenderPage); // функция наблюдатель которая рендерит страинцу

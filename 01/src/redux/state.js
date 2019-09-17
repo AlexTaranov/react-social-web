@@ -90,41 +90,10 @@ let store = {
         console.log('rerender Page');
     },
     getState() {
-        return  this._appState;
+        return  this._appState; // получает стейт
     },
     subscribe(observer) {
-        this._rerenderPage = observer;
-    },
-
-    addPost() {
-        let newPost = {
-            idPost: 5,
-            message: this._appState.profilePage.newPostText,
-            likesCount: '24',
-            avatar: 'https://writercenter.ru/uploads/images/01/80/70/2017/07/01/avatar_ratsh_194510_64x64.jpg'
-        }
-        this._appState.profilePage.postData.push(newPost);
-        this._appState.profilePage.newPostText = '';
-        this._rerenderPage(this._appState);
-    },
-    updateNewPostText(newText) {
-        this._appState.profilePage.newPostText = newText;
-        this._rerenderPage(this._appState);
-    },
-    addMsg() {
-        let newMsg = {
-            authorava: 'https://wpjournalist.nl/wp-content/uploads/2019/03/avatar-jongen-voorbeeld-1.jpg',
-            authorname: 'Me',
-            authormsg: this._appState.messegesPage.newMsgText
-        }
-
-        this._appState.messegesPage.messageData.push(newMsg);
-        this._appState.messegesPage.newMsgText = '';
-        this._rerenderPage(this._appState);
-    },
-    updateNewMessageText(newText) {
-        this._appState.messegesPage.newMsgText = newText;
-        this._rerenderPage(this._appState);
+        this._rerenderPage = observer; // функции ререндеринга присваивается значение аргумента функции в данном случае из index.js - rerenderPage
     },
 
     dispatch(action) { // { type: 'ADD-POST' }
@@ -160,8 +129,13 @@ let store = {
 export const addPostActionCreator = () => ({type: ADD_POST});
 export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
 
-export const addMsgActionCreator = () => ({type: ADD_MSG});
-export const updateNewMsgTextActionCreator = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text});
+export const addMsgActionCreator = () => {
+    return {type: ADD_MSG}
+};
+
+export const updateNewMsgTextActionCreator = (text) => {
+    return {type: UPDATE_NEW_MESSAGE_TEXT, newText: text}
+};
 
 window.store = store;
 export default store;

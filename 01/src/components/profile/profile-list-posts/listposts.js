@@ -1,6 +1,6 @@
 import React from 'react';
 import UserPost from '../profile-userposts/userpost';
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state"; // Зимпортировали акшены рекламы и обновления текста
 
 
 const ListPosts = (props) => {
@@ -10,12 +10,12 @@ const ListPosts = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        props.dispatch(addPostActionCreator());
+        props.dispatch(addPostActionCreator()); //  Переменная addPostActionCreator это обьект который несет в себе тип акшена-криэйтора для ДИСПАТЧА
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        let action = updateNewPostTextActionCreator(text);
+        let action = updateNewPostTextActionCreator(text); // передается дефолтное значение textarea из стейта в значение обьекта в action
         props.dispatch(action);
     }
 

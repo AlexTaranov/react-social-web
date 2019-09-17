@@ -13,6 +13,7 @@ const DialogsConversations = (props) => {
     let onMsgChange = () => {
         let text = newMsgElement.current.value;
         let action = updateNewMsgTextActionCreator(text);
+        console.log(action);
         props.dispatch(action);
     }
 

@@ -3,9 +3,7 @@ import DialogsMsg from './dialogs-msg';
 import {addMsgActionCreator, updateNewMsgTextActionCreator} from "../../../redux/state";
 
 const DialogsConversations = (props) => {
-
     let dialogsElements = props.msgs.map(m => <DialogsMsg authorava={m.authorava} authorname={m.authorname} authormsg={m.authormsg}/>);
-
     let newMsgElement = React.createRef();
 
     let addMsg = () => {

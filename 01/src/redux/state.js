@@ -86,14 +86,14 @@ let store = {
             ]
         }
     },
-    _rerenderPage() {
+    callSubscriber() {
         console.log('rerender Page');
     },
     getState() {
         return  this._appState; // получает стейт
     },
     subscribe(observer) {
-        this._rerenderPage = observer; // функции ререндеринга присваивается значение аргумента функции в данном случае из index.js - rerenderPage
+        this.callSubscriber = observer; // функции ререндеринга присваивается значение аргумента функции в данном случае из index.js - rerenderPage
     },
 
     dispatch(action) { // { type: 'ADD-POST' }
@@ -106,10 +106,10 @@ let store = {
             }
             this._appState.profilePage.postData.push(newPost);
             this._appState.profilePage.newPostText = '';
-            this._rerenderPage(this._appState);
+            this.callSubscriber(this._appState);
         } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
             this._appState.profilePage.newPostText = action.newText;
-            this._rerenderPage(this._appState);
+            this.callSubscriber(this._appState);
         } else if (action.type === 'ADD-MSG') {
             let newMsg = {
                 authorava: 'https://wpjournalist.nl/wp-content/uploads/2019/03/avatar-jongen-voorbeeld-1.jpg',
@@ -118,10 +118,10 @@ let store = {
             }
             this._appState.messegesPage.messageData.push(newMsg);
             this._appState.messegesPage.newMsgText = '';
-            this._rerenderPage(this._appState);
+            this.callSubscriber(this._appState);
         } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
             this._appState.messegesPage.newMsgText = action.newText;
-            this._rerenderPage(this._appState);
+            this.callSubscriber(this._appState);
         }
     }
 }

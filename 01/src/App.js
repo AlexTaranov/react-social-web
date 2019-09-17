@@ -22,13 +22,15 @@ const App = (props) => {
                         <Sidebar stateSidebar={props.appState.sidebarData} />
                     </div>
                     <div className="l_main_wrap">
-                        <Route path='/profile' render={() => <Profile
+                        <Route path='/profile'
+                               render={() => <Profile
                             stateProfilePage={props.appState.profilePage}
-                            dispatch={props.dispatch}/>}
+                            dispatch={props.dispatch} />}
                             />
-                        <Route path='/dialogs' render={() => <Dialogs
+                        <Route path='/dialogs'
+                               render={() => <Dialogs
                             stateMessegesPage={props.appState.messegesPage}
-                            dispatch={props.dispatch}/>
+                            dispatch={props.dispatch} />
                         }/>
                         <Route path='/news' render={() => <News />} />
                         <Route path='/music' render={() => <Music />} />

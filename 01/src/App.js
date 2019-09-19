@@ -29,8 +29,10 @@ const App = (props) => {
                             />
                         <Route path='/dialogs'
                                render={() => <Dialogs
-                            stateMessegesPage={props.appState.messegesPage}
-                            dispatch={props.dispatch} />
+                                   store={props.store}
+                            // stateMessegesPage={props.appState.messegesPage} Другой путь протаскивания в сообщения функций, всего стейта (всего стора)
+                            // dispatch={props.dispatch} Другой путь протаскивания в сообщения функций, всего стейта (всего стора)
+                               />
                         }/>
                         <Route path='/news' render={() => <News />} />
                         <Route path='/music' render={() => <Music />} />

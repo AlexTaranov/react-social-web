@@ -7,6 +7,7 @@ import store from "./redux/state";
 let rerenderPage = (appState) => {
     ReactDOM.render(
         <App
+            store={store}
             appState={appState} //
             dispatch={store.dispatch.bind(store)} />, // передаем в диспатч окружение store, не понял зачем здесь
 

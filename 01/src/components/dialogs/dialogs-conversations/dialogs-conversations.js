@@ -7,14 +7,14 @@ const DialogsConversations = (props) => {
     let newMsgElement = React.createRef();
 
     let addMsg = () => {
-        props.dispatch(addMsgActionCreator());
+        props.store.dispatch(addMsgActionCreator());
     }
 
     let onMsgChange = () => {
         let text = newMsgElement.current.value;
         let action = updateNewMsgTextActionCreator(text);
         console.log(action);
-        props.dispatch(action);
+        props.store.dispatch(action);
     }
 
     return (

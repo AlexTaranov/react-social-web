@@ -1,7 +1,6 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const ADD_MSG = 'ADD-MSG';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+import reducerProfile from "./reducer-profile";
+import reducerDialogs from "./reducer-dialogs";
+import reducerSidebar from "./reducer-sidebar";
 
 let store = {
     _appState: {
@@ -97,45 +96,16 @@ let store = {
     },
 
     dispatch(action) { // { type: 'ADD-POST' }
-        if (action.type === 'ADD-POST') {
-            let newPost = {
-                idPost: 5,
-                message: this._appState.profilePage.newPostText,
-                likesCount: '24',
-                avatar: 'https://writercenter.ru/uploads/images/01/80/70/2017/07/01/avatar_ratsh_194510_64x64.jpg'
-            }
-            this._appState.profilePage.postData.push(newPost);
-            this._appState.profilePage.newPostText = '';
-            this.callSubscriber(this._appState);
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-            this._appState.profilePage.newPostText = action.newText;
-            this.callSubscriber(this._appState);
-        } else if (action.type === 'ADD-MSG') {
-            let newMsg = {
-                authorava: 'https://wpjournalist.nl/wp-content/uploads/2019/03/avatar-jongen-voorbeeld-1.jpg',
-                authorname: 'Me',
-                authormsg: this._appState.messegesPage.newMsgText
-            }
-            this._appState.messegesPage.messageData.push(newMsg);
-            this._appState.messegesPage.newMsgText = '';
-            this.callSubscriber(this._appState);
-        } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
-            this._appState.messegesPage.newMsgText = action.newText;
-            this.callSubscriber(this._appState);
-        }
+        this._appState.profilePage = reducerProfile(this._appState.profilePage, action); // Функция которая принимает нужный раздел стейта, а также action затем возвращая нужный стейт
+        this._appState.messegesPage = reducerDialogs(this._appState.messegesPage, action);
+        this._appState.sidebarData = reducerSidebar(this._appState.sidebarData, action);
+
+        this.callSubscriber(this._appState);
     }
 }
 
-export const addPostActionCreator = () => ({type: ADD_POST});
-export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
 
-export const addMsgActionCreator = () => {
-    return {type: ADD_MSG}
-};
 
-export const updateNewMsgTextActionCreator = (text) => {
-    return {type: UPDATE_NEW_MESSAGE_TEXT, newText: text}
-};
 
 window.store = store;
 export default store;

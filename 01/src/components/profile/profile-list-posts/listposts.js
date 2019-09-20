@@ -1,6 +1,6 @@
 import React from 'react';
 import UserPost from '../profile-userposts/userpost';
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state"; // Зимпортировали акшены рекламы и обновления текста
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/reducer-profile"; // Зимпортировали акшены постов и обновления текста
 
 
 const ListPosts = (props) => {

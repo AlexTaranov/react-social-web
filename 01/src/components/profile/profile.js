@@ -1,9 +1,10 @@
 import React from 'react';
 import InfoPerson from './profile-infoperson/infoperson';
-import ListPosts from './profile-list-posts/listposts';
+import ListPostsContainer from './profile-list-posts/listpostsContainer';
 
 const Profile = (props) => {
-    let infoPerson = props.stateProfilePage.profileData.map(i => <InfoPerson avaprofile={i.profileAvatar} nameprofile={i.profileName} position={i.profilePosition} interests={i.profileInterest}/>);
+    let state = props.store.getState();
+    let infoPerson = state.profilePage.profileData.map(i => <InfoPerson avaprofile={i.profileAvatar} nameprofile={i.profileName} position={i.profilePosition} interests={i.profileInterest}/>);
 
     return (
         <main className="b_profile">
@@ -13,10 +14,7 @@ const Profile = (props) => {
 
             {infoPerson }
 
-            <ListPosts
-                posts={props.stateProfilePage.postData}
-                newPostText={props.stateProfilePage.newPostText}
-                dispatch={props.dispatch}/>
+            <ListPostsContainer store={props.store} />
 
         </main>
     );

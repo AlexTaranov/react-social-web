@@ -1,20 +1,19 @@
 import React from 'react';
 import DialogsMsg from './dialogs-msg';
-import {addMsgActionCreator, updateNewMsgTextActionCreator} from "../../../redux/reducer-dialogs"; // Зимпортировали акшены добавления месседжей и обновления текста в форме
 
 const DialogsConversations = (props) => {
+
     let dialogsElements = props.msgs.map(m => <DialogsMsg authorava={m.authorava} authorname={m.authorname} authormsg={m.authormsg}/>);
+
     let newMsgElement = React.createRef();
 
     let addMsg = () => {
-        props.store.dispatch(addMsgActionCreator());
+        props.addMsg();
     }
 
     let onMsgChange = () => {
         let text = newMsgElement.current.value;
-        let action = updateNewMsgTextActionCreator(text);
-        console.log(action);
-        props.store.dispatch(action);
+        props.onMsgChange(text);
     }
 
     return (

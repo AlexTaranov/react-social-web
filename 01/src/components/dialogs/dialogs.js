@@ -1,6 +1,6 @@
 import React from 'react';
 import DialogsList from './dialogs-authors/dialogs-list';
-import DialogsConversations from './dialogs-conversations/dialogs-conversations';
+import DialogsConversationsContainer from './dialogs-conversations/dialogs-conversationsContainer';
 
 const Dialogs = (props) => {
     let stateMsg = props.store.getState().messegesPage;
@@ -13,12 +13,7 @@ const Dialogs = (props) => {
                     <DialogsList dialogs={stateMsg.dialogsData} />
                 </section>
                 <section className="b_dialogs__conversation_wrap">
-                    <DialogsConversations
-                        msgs={stateMsg.messageData}
-                        newMsgText={stateMsg.newMsgText}
-                        store={props.store}
-                        // dispatch={props.dispatch} Другой путь протаскивания в сообщения функций, всего стейта (всего стора)
-                    />
+                    <DialogsConversationsContainer store={props.store} />
                 </section>
             </div>
         </main>

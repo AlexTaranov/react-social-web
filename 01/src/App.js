@@ -22,18 +22,8 @@ const App = (props) => {
                         <Sidebar stateSidebar={props.appState.sidebarData} />
                     </div>
                     <div className="l_main_wrap">
-                        <Route path='/profile'
-                               render={() => <Profile
-                            stateProfilePage={props.appState.profilePage}
-                            dispatch={props.dispatch} />}
-                            />
-                        <Route path='/dialogs'
-                               render={() => <Dialogs
-                                   store={props.store}
-                            // stateMessegesPage={props.appState.messegesPage} Другой путь протаскивания в сообщения функций, всего стейта (всего стора)
-                            // dispatch={props.dispatch} Другой путь протаскивания в сообщения функций, всего стейта (всего стора)
-                               />
-                        }/>
+                        <Route path='/profile' render={() => <Profile store={props.store}/>}/>
+                        <Route path='/dialogs' render={() => <Dialogs store={props.store}/>}/>
                         <Route path='/news' render={() => <News />} />
                         <Route path='/music' render={() => <Music />} />
                         <Route path='/settings' render={() => <Settings />} />

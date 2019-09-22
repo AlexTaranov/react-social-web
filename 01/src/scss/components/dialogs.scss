@@ -1,5 +1,5 @@
 .b_dialogs {
-    padding: 20px;
+    padding: 15px 20px;
     
     &__title {
         min-width: 100%;
@@ -8,6 +8,7 @@
         line-height: 30px;
         margin-bottom: 20px;
         grid-area: header;
+        font-weight: 300;
     }
     
     &__wrap {
@@ -20,7 +21,6 @@
     }
     
     &__list_wrap {
-        border-right: 1px solid #000;
         grid-area: sidebar;
     }
     
@@ -33,19 +33,34 @@
     }
     
     &__list_item {
-        padding: 10px 0;
+        padding-bottom: $bdrs-standart;
     }
     
     &__list_link {
-        color: gray;
+        display: block;
+        background-color: rgba($color4, .4);
+        padding: 10px;
+        margin-right: 20px;
+        border-radius: 5px;
+        color: black;
+        transition: $trsn-main;
         
         &.m-active {
-            color: red;
+            margin-right: 0;
+            font-weight: bold;
         }
     }
     
     &__conversation {
-        padding-left: 10px;
+        padding-left: 20px;
+    }
+    
+    &__new-msg {
+    
+    }
+    
+    &__textarea {
+        margin-bottom: 10px;
     }
 }
 
@@ -64,6 +79,8 @@
     }
     
     &__thumbnail_img {
+        border-radius: 50%;
+        overflow: hidden;
         width: 100%;
     }
     
@@ -71,5 +88,10 @@
         font-size: 14px;
         line-height: 16px;
         text-align: center;
+    }
+    
+    &__msg {
+        padding-top: 10px;
+        font-style: italic;
     }
 }

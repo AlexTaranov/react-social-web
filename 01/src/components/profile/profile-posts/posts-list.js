@@ -18,10 +18,10 @@ const PostsList = (props) => {
 
     return (
         <div className="b_posts">
-            <h2 className="b_posts__title">My Posts</h2>
+            <h2 className="b_posts__title t-title-3">My Posts</h2>
             <div className="b_posts__newpost">
                 <textarea ref={newPostElement} value={props.newPostText} onChange={onPostChange} id="mymsg" placeholder="your news" className="b_posts__newmsg" />
-                <button className="b_posts__newsubmit" onClick={newPost}>New Post</button>
+                <button className="b-btn b_posts__newsubmit" onClick={newPost}>New Post</button>
             </div>
 
             <div className="b_posts__list">

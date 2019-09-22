@@ -1,11 +1,12 @@
 @import "scss/reset";
+@import "scss/variables";
 @import "scss/components";
-@import "scss/varables";
 
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: $main-font;
+  text-decoration: none;
 }
 
 

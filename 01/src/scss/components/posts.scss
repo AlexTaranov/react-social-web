@@ -1,18 +1,23 @@
 
 .b_posts {
     padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    grid-template-areas:
+            'header header'
+            'new posts';
     
     &__title {
-        font-size: 18px;
-        line-height: 24px;
-        font-style: italic;
         margin-bottom: 10px;
+        grid-area: header;
     }
     
     &__newpost {
-        width: 50%;
         text-align: right;
         margin-bottom: 30px;
+        grid-area: new;
     }
     
     &__newmsg {
@@ -28,11 +33,10 @@
     }
     
     &__list {
-    
+        grid-area: posts;
     }
     
     &__list_item {
-        width: 60%;
         margin-bottom: 10px;
     }
 }

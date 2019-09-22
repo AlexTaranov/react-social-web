@@ -14,6 +14,10 @@
 // It's highly recommended to change the default colors
 // to match your app's branding.
 
+$night-rider: #333333;
+$grey-main:   #ebebeb;
+$white:       #ffffff;
+
 $primary   : #027be3;
 $secondary : #26A69A;
 $tertiary  : #555;
@@ -55,3 +59,40 @@ $color13 : #FF5353;
 $color14 : #C222CE;
 
 
+// border-radius
+$bdrs-standart: 5px;
+$bdrs-block:    8px;
+
+// typography
+
+$main-font: 'Roboto', sans-serif;
+
+// transition
+
+$trsn-main: 0.3s ease all;
+
+
+@mixin t-title-1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+@mixin t-title-2 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+@mixin t-title-3 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+@mixin t-title-4 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+@mixin t-title-5 {
+    font-size: 16px;
+    font-style: italic;
+}

@@ -7,7 +7,7 @@ const ProfileInfo = (props) => {
                 <img src={props.avaprofile} alt="" className="b_profile_info__img"/>
             </div>
             <div className="b_profile_info__wrap">
-                <h2 className="b_profile_info__name">
+                <h2 className="b_profile_info__name t-title-2">
                     {props.nameprofile}
                 </h2>
                 <div className="b_profile_info__list">

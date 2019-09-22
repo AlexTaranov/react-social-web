@@ -21,7 +21,7 @@ const DialogsTalk = (props) => {
             {dialogsElements}
 
             <div className="b_dialogs__new-msg">
-                <textarea ref={newMsgElement} value={props.newMsgText} onChange={onMsgChange} name="mymsg" id="mymsg" className="b-btn b_dialogs__newmsg"></textarea>
+                <textarea ref={newMsgElement} value={props.newMsgText} onChange={onMsgChange} name="mymsg" id="mymsg" className="b_dialogs__textarea"></textarea>
                 <button className="b-btn b_dialogs__newsubmit" onClick={addMsg}>Send Message</button>
             </div>
         </div>

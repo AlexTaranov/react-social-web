@@ -27,9 +27,9 @@ const reducerDialogs = (state = stateInitial, action) => {
     switch (action.type) {
         case ADD_MSG:
             let newMsg = {
-                authorava: 'https://wpjournalist.nl/wp-content/uploads/2019/03/avatar-jongen-voorbeeld-1.jpg',
+                authorava: 'https://images.vexels.com/media/users/3/145908/preview2/52eabf633ca6414e60a7677b0b917d92-male-avatar-maker.jpg',
                 authorname: 'Me',
-                authormsg: state.newMsgText
+                authormsg: state.newMsgText,
             }
             state.messageData.push(newMsg);
             state.newMsgText = '';

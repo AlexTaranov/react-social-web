@@ -1,0 +1,101 @@
+
+input,
+select,
+textarea {
+    -moz-appearance: none;
+    -webkit-appearance: none; // disable default IOS styling
+    
+    background: $white;
+    border: 1px solid $tertiary;
+    border-radius: 5px;
+    box-shadow: none;
+    color: $night-rider;
+    height: 45px;
+    max-width: 100%;
+    outline: none;
+    padding: 11px 15px;
+    position: relative;
+    width: 100%;
+    z-index: 9;
+    
+    &::-ms-clear {
+        display: none; // Hide a cross-cleaning for IE and EDGE
+    }
+    
+    &::-ms-expand {
+        display: none;
+    }
+    
+    // disabled
+    &:disabled {
+        -webkit-opacity: 1;
+        
+        cursor: not-allowed !important;
+    }
+}
+
+textarea {
+    min-height: 115px;
+    resize: none;
+}
+
+
+button,
+.b-btn {
+    -moz-appearance: none;
+    -webkit-appearance: none; // disable default IOS styling
+    
+    background: $color7;
+    border-radius: $bdrs-standart;
+    border: none;
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    min-width: 100px;
+    letter-spacing: 1px;
+    outline: 0;
+    padding: 9px 10px 8px;
+    text-align: center;
+    vertical-align: top;
+    text-transform: uppercase;
+    
+    &:focus {
+        background: $color7;
+    }
+    
+    &:hover,
+    &:active {
+        background: $color7;
+    }
+}
+
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2em;
+}
+
+h1,
+.t-title-1 {
+    @include t-title-1;
+}
+
+h2,
+.t-title-2 {
+    @include t-title-2;
+}
+
+h3,
+.t-title-3 {
+    @include t-title-3;
+}
+
+h4,
+.t-title-4 {
+    @include t-title-4;
+}
+
+h5,
+.t-title-5 {
+    @include t-title-5;
+}

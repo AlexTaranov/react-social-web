@@ -3,6 +3,8 @@
 .b_profile {
     &_head {
         height: 150px;
+        border-radius: $bdrs-block $bdrs-block 0 0;
+        overflow: hidden;
         
         &__img {
             width: 100%;

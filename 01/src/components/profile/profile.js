@@ -1,10 +1,10 @@
 import React from 'react';
-import InfoPerson from './profile-infoperson/infoperson';
-import ListPostsContainer from './profile-list-posts/listpostsContainer';
+import ProfileInfo from './profile-infoperson/profile-info';
+import ListPostsContainer from './profile-posts/posts-list-container';
 
 const Profile = (props) => {
     let state = props.store.getState();
-    let infoPerson = state.profilePage.profileData.map(i => <InfoPerson avaprofile={i.profileAvatar} nameprofile={i.profileName} position={i.profilePosition} interests={i.profileInterest}/>);
+    let infoPerson = state.profilePage.profileData.map(i => <ProfileInfo avaprofile={i.profileAvatar} nameprofile={i.profileName} position={i.profilePosition} interests={i.profileInterest}/>);
 
     return (
         <main className="b_profile">

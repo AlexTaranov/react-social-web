@@ -1,8 +1,8 @@
 import React from 'react';
 import {addMsgActionCreator, updateNewMsgTextActionCreator} from "../../../redux/reducer-dialogs";
-import DialogsConversations from "./dialogs-conversations";
+import DialogsTalk from "./dialogs-talk";
 
-const DialogsConversationsContainer = (props) => {
+const DialogsTalkContainer = (props) => {
 
     let state = props.store.getState();
 
@@ -16,7 +16,7 @@ const DialogsConversationsContainer = (props) => {
     }
 
     return (
-        <DialogsConversations
+        <DialogsTalk
             addMsg={addMsg}
             onMsgChange={onMsgChange}
             msgs={state.messegesPage.messageData}
@@ -25,4 +25,4 @@ const DialogsConversationsContainer = (props) => {
     );
 }
 
-export default DialogsConversationsContainer;
+export default DialogsTalkContainer;

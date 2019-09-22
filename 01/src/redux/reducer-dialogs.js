@@ -20,7 +20,7 @@ let stateInitial = {
             authormsg: 'Hey, men! Nice to meet you.'
         },
     ],
-    newMsgText: 'it-kamasutra.com-MSG'
+    newMsgText: 'ваше сообщение здесь'
 };
 
 const reducerDialogs = (state = stateInitial, action) => {

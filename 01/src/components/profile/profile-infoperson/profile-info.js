@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InfoPerson = (props) => {
+const ProfileInfo = (props) => {
     return (
         <div className="b_profile_info">
             <div className="b_profile_info__figure">
@@ -19,4 +19,4 @@ const InfoPerson = (props) => {
     );
 }
 
-export default InfoPerson;
+export default ProfileInfo;

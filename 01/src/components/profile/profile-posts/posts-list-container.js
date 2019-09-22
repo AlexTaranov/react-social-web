@@ -1,9 +1,9 @@
 import React from 'react';
 import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/reducer-profile";
-import ListPosts from "./listposts";
+import PostsList from "./posts-list";
 
 
-const ListPostsContainer = (props) => {
+const PostsListContainer = (props) => {
 
     let state = props.store.getState();
 
@@ -17,7 +17,7 @@ const ListPostsContainer = (props) => {
     }
 
     return (
-        <ListPosts
+        <PostsList
             updateNewPostText={onPostChange}
             newPost={newPost}
             newPostText={state.profilePage.newPostText}
@@ -25,4 +25,4 @@ const ListPostsContainer = (props) => {
     );
 }
 
-export default ListPostsContainer;
+export default PostsListContainer;

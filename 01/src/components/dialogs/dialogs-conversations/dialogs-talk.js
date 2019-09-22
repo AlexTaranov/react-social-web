@@ -1,7 +1,7 @@
 import React from 'react';
 import DialogsMsg from './dialogs-msg';
 
-const DialogsConversations = (props) => {
+const DialogsTalk = (props) => {
 
     let dialogsElements = props.msgs.map(m => <DialogsMsg authorava={m.authorava} authorname={m.authorname} authormsg={m.authormsg}/>);
 
@@ -28,4 +28,4 @@ const DialogsConversations = (props) => {
     );
 }
 
-export default DialogsConversations;
+export default DialogsTalk;

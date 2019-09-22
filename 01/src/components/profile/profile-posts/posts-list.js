@@ -1,9 +1,9 @@
 import React from 'react';
-import UserPost from '../profile-userposts/userpost';
+import PostSingle from './post-single';
 
-const ListPosts = (props) => {
+const PostsList = (props) => {
 
-    let postsList = props.posts.map(p => <UserPost idPost={p.idPost} message={p.message} likesCount={p.likesCount} avatar={p.avatar}/> );
+    let postsList = props.posts.map(p => <PostSingle idPost={p.idPost} message={p.message} likesCount={p.likesCount} avatar={p.avatar}/> );
 
     let newPostElement = React.createRef();
 
@@ -31,4 +31,4 @@ const ListPosts = (props) => {
     );
 }
 
-export default ListPosts;
+export default PostsList;

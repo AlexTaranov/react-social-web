@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserPost = (props) => {
+const PostSingle = (props) => {
     return (
         <div className="b_posts__list_item">
             <div className="b_posts_item" id={props.idPost}>
@@ -17,4 +17,4 @@ const UserPost = (props) => {
     );
 }
 
-export default UserPost;
+export default PostSingle;

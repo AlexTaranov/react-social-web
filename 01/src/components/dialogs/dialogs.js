@@ -1,6 +1,6 @@
 import React from 'react';
 import DialogsList from './dialogs-authors/dialogs-list';
-import DialogsConversationsContainer from './dialogs-conversations/dialogs-conversationsContainer';
+import DialogsTalkContainer from './dialogs-conversations/dialogs-talk-container';
 
 const Dialogs = (props) => {
     let stateMsg = props.store.getState().messegesPage;
@@ -13,7 +13,7 @@ const Dialogs = (props) => {
                     <DialogsList dialogs={stateMsg.dialogsData} />
                 </section>
                 <section className="b_dialogs__conversation_wrap">
-                    <DialogsConversationsContainer store={props.store} />
+                    <DialogsTalkContainer store={props.store} />
                 </section>
             </div>
         </main>

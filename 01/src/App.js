@@ -11,6 +11,7 @@ import Sidebar from './components/sidebar/sidebar';
 import './App.css';
 
 const App = (props) => {
+
     return (
         <BrowserRouter>
             <div className="l_main">
@@ -19,7 +20,7 @@ const App = (props) => {
                         <Header />
                     </div>
                     <div className="l_main_aside">
-                        <Sidebar stateSidebar={props.appState.sidebarData} />
+                        <Sidebar store={props.store} />
                     </div>
                     <div className="l_main_wrap">
                         <Route path='/profile' render={() => <Profile store={props.store}/>}/>

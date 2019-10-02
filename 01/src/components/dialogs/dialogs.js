@@ -13,7 +13,7 @@ const Dialogs = (props) => {
                     <DialogsList dialogs={stateMsg.dialogsData} />
                 </section>
                 <section className="b_dialogs__conversation_wrap">
-                    <DialogsTalkContainer store={props.store} />
+                    <DialogsTalkContainer />
                 </section>
             </div>
         </main>

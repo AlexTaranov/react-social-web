@@ -14,7 +14,7 @@ const Profile = (props) => {
 
             {infoPerson }
 
-            <ListPostsContainer store={props.store} />
+            <ListPostsContainer />
 
         </main>
     );

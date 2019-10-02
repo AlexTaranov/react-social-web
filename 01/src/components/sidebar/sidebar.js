@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Friends from './friends/friends';
 
 const Sidebar = (props) => {
+    let state = props.store.getState();
     return (
         <aside className="b_sidebar">
             <nav className="b_nav">
@@ -26,7 +27,7 @@ const Sidebar = (props) => {
             </nav>
 
             <section className="l-friends">
-                <Friends friendsState={props.stateSidebar.sidebarFriends} />
+                <Friends friendsState={state.sidebarData.sidebarFriends} />
             </section>
         </aside>
     );

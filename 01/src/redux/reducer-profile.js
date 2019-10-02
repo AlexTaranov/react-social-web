@@ -41,7 +41,7 @@ const reducerProfile = (state = stateInitial, action) => {
                 message: state.newPostText,
                 likesCount: '24',
                 avatar: 'https://writercenter.ru/uploads/images/01/80/70/2017/07/01/avatar_ratsh_194510_64x64.jpg'
-            }
+            };
             state.postData.push(newPost);
             state.newPostText = '';
             return state;

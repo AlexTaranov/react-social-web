@@ -5,6 +5,7 @@ import Footer from './components/footer/footer';
 import Profile from './components/profile/profile';
 import Dialogs from './components/dialogs/dialogs';
 import News from './components/news/news';
+import Users from './components/users/users';
 import Music from './components/music/music';
 import Settings from './components/settings/settings';
 import Sidebar from './components/sidebar/sidebar';
@@ -25,6 +26,7 @@ const App = (props) => {
                     <div className="l_main_wrap">
                         <Route path='/profile' render={() => <Profile store={props.store}/>}/>
                         <Route path='/dialogs' render={() => <Dialogs store={props.store}/>}/>
+                        <Route path='/users' render={() => <Users />}/>
                         <Route path='/news' render={() => <News />} />
                         <Route path='/music' render={() => <Music />} />
                         <Route path='/settings' render={() => <Settings />} />

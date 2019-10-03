@@ -20,35 +20,36 @@ let stateInitial = {
             authormsg: 'Hey, men! Nice to meet you.'
         },
     ],
-    newMsgText: 'ваше сообщение здесь'
+    newMsgText: 'Hello!'
 };
 
 const reducerDialogs = (state = stateInitial, action) => {
     switch (action.type) {
-        case ADD_MSG:
+        case ADD_MSG: {
             let newMsg = {
                 authorava: 'https://images.vexels.com/media/users/3/145908/preview2/52eabf633ca6414e60a7677b0b917d92-male-avatar-maker.jpg',
                 authorname: 'Me',
                 authormsg: state.newMsgText,
-            }
-            state.messageData.push(newMsg);
-            state.newMsgText = '';
-            return state;
-        case UPDATE_NEW_MESSAGE_TEXT:
-            state.newMsgText = action.newText;
-            return state;
+            };
+            let copyState = {...state};
+            copyState.messageData = [...state.messageData];
+            copyState.messageData.push(newMsg);
+            copyState.newMsgText = '';
+            return copyState;
+        }
+        case UPDATE_NEW_MESSAGE_TEXT: {
+            let copyState = {...state};
+            copyState.newMsgText = action.newText;
+            return copyState;
+        }
         default:
             return state;
     }
 }
 
 
-export const addMsgActionCreator = () => {
-    return {type: ADD_MSG}
-};
+export const addMsgActionCreator = () => {return {type: ADD_MSG}};
 
-export const updateNewMsgTextActionCreator = (text) => {
-    return {type: UPDATE_NEW_MESSAGE_TEXT, newText: text}
-};
+export const updateNewMsgTextActionCreator = (text) => {return {type: UPDATE_NEW_MESSAGE_TEXT, newText: text}};
 
 export default reducerDialogs;

@@ -6,17 +6,12 @@ import './index.scss';
 import store from "./redux/redux-store";
 import {Provider} from "react-redux";
 
-let rerenderPage = () => {
-    ReactDOM.render(
-            <Provider store={store}>
-                <App store={store} />
-            </Provider>,
-        document.getElementById('root')
-    );
-}
 
-rerenderPage(); // выполняем функцию ререндеринга страницы с получением всего стейта с помощью функции которая ретурнит его
+ReactDOM.render(
+        <Provider store={store}>
+            <App store={store} />
+        </Provider>,
+    document.getElementById('root')
+);
 
-store.subscribe(() => { // subscribe это функция - redux
-    rerenderPage();
-}); // функция наблюдатель которая рендерит страницу
+

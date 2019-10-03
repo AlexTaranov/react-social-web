@@ -22,7 +22,8 @@ let profileDispatchToProps = (dispatch) => {
     }
 }
 
-const PostsListContainer = connect(profileStateToProps, profileDispatchToProps)(PostsList); // почему две скобочки? Потому что мы первый раз вызвали ее, она вернула нам другую функцию, и мы вызываем потом ту функцию, которую вернул предыдущий вызов
+const PostsListContainer = connect(profileStateToProps, profileDispatchToProps)(PostsList);
+// почему две скобочки? Потому что мы первый раз вызвали ее, она вернула нам другую функцию, и мы вызываем потом ту функцию, которую вернул предыдущий вызов
 // т.е. PostsList законнектили к стору
 
 

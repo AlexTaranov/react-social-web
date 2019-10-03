@@ -10,5 +10,6 @@ let reducersMass = combineReducers({
 });
 
 let store = createStore(reducersMass);
+window.store = store;
 
 export default store;

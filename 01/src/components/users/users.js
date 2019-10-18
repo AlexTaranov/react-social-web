@@ -5,10 +5,7 @@ const Users = (props) => {
     return (
         <main className="l_users">
             <h1>Users</h1>
-
-            <div className="b-users">
-                <UsersListContainer />
-            </div>
+            <UsersListContainer />
         </main>
     );
 }

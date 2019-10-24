@@ -23,6 +23,9 @@ const Sidebar = (props) => {
                     <li className="b_nav_list__item">
                         <NavLink className="b_nav_list__link" activeClassName="m-active" to="/settings">Settings</NavLink>
                     </li>
+                    <li className="b_nav_list__item">
+                        <NavLink className="b_nav_list__link" activeClassName="m-active" to="/users">Users</NavLink>
+                    </li>
                 </ul>
             </nav>
 

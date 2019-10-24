@@ -8,6 +8,7 @@ import News from './components/news/news';
 import Music from './components/music/music';
 import Settings from './components/settings/settings';
 import Sidebar from './components/sidebar/sidebar';
+import Users from './components/users/users';
 import './App.css';
 
 const App = (props) => {
@@ -28,6 +29,7 @@ const App = (props) => {
                         <Route path='/news' render={() => <News />} />
                         <Route path='/music' render={() => <Music />} />
                         <Route path='/settings' render={() => <Settings />} />
+                        <Route path='/users' render={() => <Users />} />
                     </div>
                 </div>
                 <div className="l_main_footer">

@@ -60,12 +60,13 @@ const reducerUsers = (state = stateInitial, action) => {
             };
 
         case SET_USERS:
-            return {...state, users: [ ...state.userData, ...action.users ]}
+            return {...state, users: [ ...state.userData, ...action.users ]};
 
         default:
             return state
     }
 }
+
 
 export const userFollowAC = (userId) => ({type: FOLLOW, userId});
 export const userUnfollowAC = (userId) => ({type: UNFOLLOW, userId});

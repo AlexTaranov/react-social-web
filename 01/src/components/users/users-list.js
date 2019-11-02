@@ -3,12 +3,14 @@ import * as axios from 'axios';
 import userPhoto from '../../../src/assets/images/avatar-deffault.png'
 
 let UsersList = (props) => {
-
-    if (props.users.length === 0) {
-        axios.get('https://social-network.samuraijs.com/api/1.0//users').then(responce => {
-            props.setUsers(responce.data.items);
-        });
+    let getUsers  = () => {
+        if (props.users.length === 0) {
+            axios.get('https://social-network.samuraijs.com/api/1.0//users').then(responce => {
+                props.setUsers(responce.data.items);
+            });
+        }
     }
+
 
     let userList = props.users.map(u =>
         <div className="b-user" key={u.id}>
@@ -39,6 +41,7 @@ let UsersList = (props) => {
 
     return (
         <div className='b-users-list'>
+            <button onClick={getUsers}>Get User</button>
             {userList}
         </div>
     );

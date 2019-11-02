@@ -39,8 +39,8 @@ const reducerUsers = (state = stateInitial, action) => {
                 //users: [...state.userData], Одно и то же с тем что в след строке
                 //users: state.userData.map( u => u ),
                 userData: state.userData.map( u => {
-                    if (u.userId === action.userId) {
-                        return {...u, userFollow: true}
+                    if (u.id === action.id) {
+                        return {...u, followed: true}
                     }
                     return u;
                 })
@@ -52,8 +52,8 @@ const reducerUsers = (state = stateInitial, action) => {
                 //users: [...state.userData], Одно и то же с тем что в след строке
                 //users: state.userData.map( u => u ),
                 userData: state.userData.map( u => {
-                    if (u.userId === action.userId) {
-                        return {...u, userFollow: false}
+                    if (u.id === action.id) {
+                        return {...u, followed: false}
                     }
                     return u;
                 })
@@ -68,8 +68,8 @@ const reducerUsers = (state = stateInitial, action) => {
 }
 
 
-export const userFollowAC = (userId) => ({type: FOLLOW, userId});
-export const userUnfollowAC = (userId) => ({type: UNFOLLOW, userId});
+export const userFollowAC = (id) => ({type: FOLLOW, id});
+export const userUnfollowAC = (id) => ({type: UNFOLLOW, id});
 export const setUsersAC = (users) => ({type: SET_USERS, users});
 
 export default reducerUsers;

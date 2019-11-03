@@ -1,4 +1,3 @@
-
 import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/reducer-profile";
 import PostsList from "./posts-list";
 import {connect} from "react-redux";
@@ -8,7 +7,7 @@ let profileStateToProps = (state) => {
         posts: state.profilePage.postData,
         newPostText: state.profilePage.newPostText
     }
-}
+};
 
 let profileDispatchToProps = (dispatch) => {
     return {
@@ -20,7 +19,7 @@ let profileDispatchToProps = (dispatch) => {
             dispatch(addPostActionCreator());
         }
     }
-}
+};
 
 const PostsListContainer = connect(profileStateToProps, profileDispatchToProps)(PostsList);
 // почему две скобочки? Потому что мы первый раз вызвали ее, она вернула нам другую функцию, и мы вызываем потом ту функцию, которую вернул предыдущий вызов

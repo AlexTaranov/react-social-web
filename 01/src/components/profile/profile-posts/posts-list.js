@@ -9,12 +9,12 @@ const PostsList = (props) => {
 
     let newPost = () => {
         props.newPost();
-    }
+    };
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
         props.updateNewPostText(text);
-    }
+    };
 
     return (
         <div className="b_posts">

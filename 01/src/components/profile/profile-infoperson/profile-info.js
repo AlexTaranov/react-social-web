@@ -1,6 +1,7 @@
 import React from 'react';
 
 const ProfileInfo = (props) => {
+
     return (
         <div className="b_profile_info">
             <div className="b_profile_info__figure">

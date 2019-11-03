@@ -9,7 +9,7 @@ let UsersList = (props) => {
                 props.setUsers(responce.data.items);
             });
         }
-    }
+    };
 
 
     let userList = props.users.map(u =>
@@ -37,7 +37,7 @@ let UsersList = (props) => {
                 </div>
             </div>
         </div>
-    )
+    );
 
     return (
         <div className='b-users-list'>

@@ -1,6 +1,6 @@
 import React from 'react';
 import * as axios from 'axios';
-import userPhoto from '../../../src/assets/images/avatar-deffault.png'
+import userPhoto from '../../../src/assets/images/avatar-deffault.png';
 
 let UsersList = (props) => {
     let getUsers  = () => {
@@ -45,6 +45,6 @@ let UsersList = (props) => {
             {userList}
         </div>
     );
-}
+};
 
 export default UsersList;

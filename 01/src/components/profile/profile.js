@@ -1,6 +1,6 @@
 import React from 'react';
 //import ProfileInfo from './profile-infoperson/profile-info';
-import ProfileInfoContainer from './profile-infoperson/profile-info';
+import ProfileInfoContainer from './profile-infoperson/profile-info-container';
 import ListPostsContainer from './profile-posts/posts-list-container';
 
 const Profile = (props) => {
@@ -16,7 +16,7 @@ const Profile = (props) => {
 
             {/*{infoPerson }*/}
 
-            <ProfileInfoContainer state={props.store}/>
+            <ProfileInfoContainer store={props.store} />
 
             <ListPostsContainer />
 

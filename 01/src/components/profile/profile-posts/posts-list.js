@@ -4,7 +4,6 @@ import PostSingle from './post-single';
 const PostsList = (props) => {
 
     let postsList = props.posts.map(p => <PostSingle idPost={p.idPost} message={p.message} likesCount={p.likesCount} avatar={p.avatar}/> );
-
     let newPostElement = React.createRef();
 
     let newPost = () => {

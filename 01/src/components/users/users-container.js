@@ -12,11 +12,9 @@ let usersDispatchToProps = (dispatch) => {
     return {
         follow: (id) => {
             dispatch(userFollowAC(id));
-            console.log('123');
         },
         unfollow: (id) => {
             dispatch(userUnfollowAC(id));
-            console.log('321');
         },
         setUsers: (users) => {
             dispatch(setUsersAC(users));

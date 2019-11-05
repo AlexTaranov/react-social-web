@@ -3,13 +3,16 @@ import * as axios from 'axios';
 import userPhoto from '../../../src/assets/images/avatar-deffault.png'
 
 class UsersListClass extends  React.Component {
-    getUsers  = () => {
-        if (this.props.users.length === 0) {
-            axios.get('https://social-network.samuraijs.com/api/1.0//users').then(responce => {
-                this.props.setUsers(responce.data.items);
-            });
-        }
-    };
+
+
+    constructor(props) {
+        super(props);
+        axios.get('https://social-network.samuraijs.com/api/1.0//users').then(responce => {
+            this.props.setUsers(responce.data.items);
+        });
+    }
+
+
 
     render() {
 
@@ -42,7 +45,7 @@ class UsersListClass extends  React.Component {
 
         return (
             <div className='b-users-list'>
-                <button onClick={this.getUsers}>Get User</button>
+                <button>Get User</button>
                 {userList}
             </div>
         );

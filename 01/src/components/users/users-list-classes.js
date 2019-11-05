@@ -12,6 +12,7 @@ class UsersListClass extends  React.Component {
     };
 
     render() {
+
         let userList = this.props.users.map(u =>
             <div className="b-user" key={u.id}>
                 <div className="b-user_thumnail">
@@ -41,7 +42,7 @@ class UsersListClass extends  React.Component {
 
         return (
             <div className='b-users-list'>
-                <button onClick={getUsers}>Get User</button>
+                <button onClick={this.getUsers}>Get User</button>
                 {userList}
             </div>
         );

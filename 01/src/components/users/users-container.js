@@ -27,7 +27,6 @@ let usersDispatchToProps = (dispatch) => {
         },
         setTotalUsersCount: (totalCount) => {
             dispatch(setUsersTotalCountAC(totalCount));
-            console.log(totalCount + ' setTotalUsersCount - users-container');
         },
     }
 }

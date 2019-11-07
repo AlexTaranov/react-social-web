@@ -1,7 +1,7 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
-const SET_CURRENTPAGE = 'SET_CURRENT_PAGE';
+const SET_CURRENTPAGE = 'SET_CURRENTPAGE';
 const SET_TOTAL_COUNT_USERS = 'SET_TOTAL_COUNT_USERS';
 
 let stateInitial = {
@@ -68,7 +68,7 @@ const reducerUsers = (state = stateInitial, action) => {
             return {...state, userData: action.users };
 
         case SET_CURRENTPAGE:
-            return {...state, currentPage: action.currentPage};
+            return {...state, currentPage: action.page_number};
 
         case SET_TOTAL_COUNT_USERS:
             return {...state, totalUsersCount: action.count};

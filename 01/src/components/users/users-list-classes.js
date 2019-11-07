@@ -20,8 +20,6 @@ class UsersListClass extends  React.Component {
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page_number}&count=${this.props.pageSize}`).then(responce => {
             this.props.setUsers(responce.data.items);
         });
-        console.log(this.props.currentPage);
-        console.log(page_number);
     };
 
     render() {

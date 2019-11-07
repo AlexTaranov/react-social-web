@@ -9,12 +9,33 @@ class UsersListClass extends  React.Component {
     // };
 
     componentDidMount() {
-        axios.get('https://social-network.samuraijs.com/api/1.0//users').then(responce => {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(responce => {
+            this.props.setUsers(responce.data.items);
+            this.props.setTotalUsersCount(responce.data.totalCount);
+        });
+    };
+
+    onChangePage = (page_number) => {
+        this.props.setCurrentPage(page_number);
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page_number}&count=${this.props.pageSize}`).then(responce => {
             this.props.setUsers(responce.data.items);
         });
-    }
+    };
 
     render() {
+        let countPages = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+
+        console.log(countPages + ' countPages- users-container');
+
+        let pagesList = [];
+
+        for (let i = 1; i <= countPages; i++) {
+            pagesList.push(i);
+        }
+
+        let pagesListView = pagesList.map( p => {
+            return <li className={this.props.currentPage === p ? 'b-pagination_item m-active' : 'b-pagination_item'} onClick={(event) => {this.onChangePage(p)}}>{p}</li>
+        });
 
         let userList = this.props.users.map(u =>
             <div className="b-user" key={u.id}>
@@ -44,8 +65,14 @@ class UsersListClass extends  React.Component {
         );
 
         return (
+
             <div className='b-users-list'>
-                <button>Get User</button>
+
+                <div className="b-pagination">
+                    <ul className="b-pagination_list">
+                        {pagesListView}
+                    </ul>
+                </div>
                 {userList}
             </div>
         );

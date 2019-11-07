@@ -65,5 +65,21 @@
     }
 }
 
+.b-pagination {
+    &_list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    &_item {
+        cursor: pointer;
+        padding: 0 5px;
+        
+        &.m-active {
+            font-weight: bold;
+        }
+    }
+}
+
 
 

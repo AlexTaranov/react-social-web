@@ -1,6 +1,8 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
+const SET_CURRENTPAGE = 'SET_CURRENT_PAGE';
+const SET_TOTAL_COUNT_USERS = 'SET_TOTAL_COUNT_USERS';
 
 let stateInitial = {
     userData: [
@@ -28,7 +30,10 @@ let stateInitial = {
         //     userFollow: true,
         //     avatar: 'http://gameszon.net/content/cats-img/avatar3.png'
         // }
-    ]
+    ],
+    pageSize: 5,
+    totalUsersCount: 0,
+    currentPage: 1
 };
 
 const reducerUsers = (state = stateInitial, action) => {
@@ -60,16 +65,24 @@ const reducerUsers = (state = stateInitial, action) => {
             };
 
         case SET_USERS:
-            return {...state, userData: [ ...state.userData, ...action.users ]};
+            return {...state, userData: action.users };
+
+        case SET_CURRENTPAGE:
+            return {...state, currentPage: action.currentPage};
+
+        case SET_TOTAL_COUNT_USERS:
+            return {...state, totalUsersCount: action.count};
 
         default:
             return state
     }
-}
+};
 
 
 export const userFollowAC = (id) => ({type: FOLLOW, id});
 export const userUnfollowAC = (id) => ({type: UNFOLLOW, id});
 export const setUsersAC = (users) => ({type: SET_USERS, users});
+export const setPageAC = (page_number) => ({type: SET_CURRENTPAGE, page_number});
+export const setUsersTotalCountAC = (totalCount) => ({type: SET_TOTAL_COUNT_USERS, count: totalCount});
 
 export default reducerUsers;

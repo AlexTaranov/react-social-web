@@ -1,10 +1,13 @@
 import UsersListClass from './users-list-classes'
 import {connect} from "react-redux";
-import {setUsersAC, userFollowAC, userUnfollowAC} from "../../redux/reducer-users";
+import {setUsersAC, userFollowAC, userUnfollowAC, setPageAC, setUsersTotalCountAC} from "../../redux/reducer-users";
 
 let usersStateToProps = (state) => {
     return {
-        users: state.usersPage.userData
+        users: state.usersPage.userData,
+        pageSize: state.usersPage.pageSize,
+        totalUsersCount: state.usersPage.totalUsersCount,
+        currentPage: state.usersPage.currentPage
     }
 };
 
@@ -12,14 +15,19 @@ let usersDispatchToProps = (dispatch) => {
     return {
         follow: (id) => {
             dispatch(userFollowAC(id));
-            console.log('123');
         },
         unfollow: (id) => {
             dispatch(userUnfollowAC(id));
-            console.log('321');
         },
         setUsers: (users) => {
             dispatch(setUsersAC(users));
+        },
+        setCurrentPage: (page_number) => {
+            dispatch(setPageAC(page_number));
+        },
+        setTotalUsersCount: (totalCount) => {
+            dispatch(setUsersTotalCountAC(totalCount));
+            console.log(totalCount + ' setTotalUsersCount - users-container');
         },
     }
 }

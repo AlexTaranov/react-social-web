@@ -1,4 +1,4 @@
-import UsersListClass from './users-list-classes'
+import UsersListAPI from './users-list-api'
 import {connect} from "react-redux";
 import {setUsersAC, userFollowAC, userUnfollowAC, setPageAC, setUsersTotalCountAC} from "../../redux/reducer-users";
 
@@ -32,4 +32,4 @@ let usersDispatchToProps = (dispatch) => {
 }
 
 
-export default connect(usersStateToProps, usersDispatchToProps)(UsersListClass)
+export default connect(usersStateToProps, usersDispatchToProps)(UsersListAPI)

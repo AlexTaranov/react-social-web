@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, BrowserRouter } from 'react-router-dom';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
-import Profile from './components/profile/profile';
+import ProfileContainer from "./components/profile/profile-container";
 import Dialogs from './components/dialogs/dialogs';
 import News from './components/news/news';
 import Music from './components/music/music';
@@ -10,6 +10,7 @@ import Settings from './components/settings/settings';
 import Sidebar from './components/sidebar/sidebar';
 import Users from './components/users/users';
 import './App.css';
+
 
 const App = (props) => {
 
@@ -24,7 +25,7 @@ const App = (props) => {
                         <Sidebar store={props.store} />
                     </div>
                     <div className="l_main_wrap">
-                        <Route path='/profile' render={() => <Profile store={props.store}/>}/>
+                        <Route path='/profile/:userId?' render={() => <ProfileContainer store={props.store}/>}/>
                         <Route path='/dialogs' render={() => <Dialogs store={props.store}/>}/>
                         <Route path='/news' render={() => <News />} />
                         <Route path='/music' render={() => <Music />} />

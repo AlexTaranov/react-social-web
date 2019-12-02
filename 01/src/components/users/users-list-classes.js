@@ -1,5 +1,6 @@
 import React from 'react';
 import userPhoto from '../../../src/assets/images/avatar-deffault.png'
+import {NavLink} from "react-router-dom";
 
 
 let UsersListClass = (props) => {
@@ -24,7 +25,10 @@ let UsersListClass = (props) => {
         <div className="b-user" key={u.id}>
             <div className="b-user_thumnail">
                 <figure className="b-user_thumnail-img">
-                    <img src={u.photos.small != null ? u.photos.small : userPhoto} alt=""/>
+
+                    <NavLink to={"/profile/" + u.id}>
+                        <img src={u.photos.small != null ? u.photos.small : userPhoto} alt=""/>
+                    </NavLink>
                 </figure>
                 {u.followed
                     ? <button className="b-user_thumnail-follow m-follow" onClick={() => {

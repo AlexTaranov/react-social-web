@@ -1,6 +1,7 @@
 import React from 'react';
 import * as axios from 'axios';
 import userPhoto from '../../../src/assets/images/avatar-deffault.png'
+import {NavLink} from "react-router-dom";
 
 let UsersList = (props) => {
     let getUsers  = () => {
@@ -16,6 +17,9 @@ let UsersList = (props) => {
         <div className="b-user" key={u.id}>
             <div className="b-user_thumnail">
                 <figure className="b-user_thumnail-img">
+                    <NavLink to="/profile">
+                        <img src={u.photos.small != null ? u.photos.small : userPhoto} alt=""/>
+                    <NavLink>
                     <img src={u.photos.small != null ? u.photos.small : userPhoto} alt=""/>
                 </figure>
                 {u.followed

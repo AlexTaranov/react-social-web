@@ -1,5 +1,6 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SET_USER_PROFILE = 'SET_USER_PROFILE';
 
 let stateInitial = {
     postData: [
@@ -30,7 +31,8 @@ let stateInitial = {
             profileAvatar: 'http://www.spletnik.ru/img/__post/68/68cd2b706c1fe59dc8df7e58a1655546_300.jpg'
         }
     ],
-    newPostText: 'it-kamasutra.com'
+    newPostText: 'it-kamasutra.com',
+    profile: null
 };
 
 const reducerProfile = (state = stateInitial, action) => {
@@ -53,12 +55,18 @@ const reducerProfile = (state = stateInitial, action) => {
             stateCopy.newPostText = action.newText;
             return stateCopy;
         }
+        case SET_USER_PROFILE: {
+            return {...state, profile: action.profile};
+        }
         default:
             return state
     }
 }
 
 export const addPostActionCreator = () => ({type: ADD_POST});
+
 export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
+
+export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 
 export default reducerProfile;

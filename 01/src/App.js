@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, BrowserRouter } from 'react-router-dom';
-import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import ProfileContainer from "./components/profile/profile-container";
 import Dialogs from './components/dialogs/dialogs';
@@ -9,8 +8,8 @@ import Music from './components/music/music';
 import Settings from './components/settings/settings';
 import Sidebar from './components/sidebar/sidebar';
 import Users from './components/users/users';
+import HeaderContainer from "./components/header/header-container";
 import './App.css';
-
 
 const App = (props) => {
 
@@ -19,7 +18,7 @@ const App = (props) => {
             <div className="l_main">
                 <div className="l_main_container">
                     <div className="l_main_header">
-                        <Header />
+                        <HeaderContainer />
                     </div>
                     <div className="l_main_aside">
                         <Sidebar store={props.store} />

@@ -19,6 +19,8 @@ let UsersListClass = (props) => {
                    onClick={(event) => {props.onChangePage(p)}}>{p}</li>
     });
 
+    console.log('test');
+
     let userList = props.users.map(u =>
         <div className="b-user" key={u.id}>
             <div className="b-user_thumnail">

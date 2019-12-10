@@ -1,6 +1,7 @@
 import React from 'react';
 import userPhoto from '../../../src/assets/images/avatar-deffault.png'
 import {NavLink} from "react-router-dom";
+import * as axios from "axios";
 
 
 let UsersListClass = (props) => {
@@ -18,25 +19,41 @@ let UsersListClass = (props) => {
                    onClick={(event) => {props.onChangePage(p)}}>{p}</li>
     });
 
-
-
-
     let userList = props.users.map(u =>
         <div className="b-user" key={u.id}>
             <div className="b-user_thumnail">
                 <figure className="b-user_thumnail-img">
-
                     <NavLink to={"/profile/" + u.id}>
                         <img src={u.photos.small != null ? u.photos.small : userPhoto} alt=""/>
                     </NavLink>
                 </figure>
                 {u.followed
-                    ? <button className="b-user_thumnail-follow m-follow" onClick={() => {
-                        props.unfollow(u.id)
-                    }}>Follow</button>
-                    : <button className="b-user_thumnail-follow m-unfollow" onClick={() => {
-                        props.follow(u.id)
+                    ? <button className="b-user_thumnail-follow m-unfollow" onClick={() => {
+                        axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                            withCredentials: true,
+                            headers: {
+                                "API-KEY" : "40e4bdc3-98a4-4981-b544-301ca7484e7d"
+                            }
+                        }).then(responce => {
+                            if (responce.data.resultCode === 0) {
+                                props.unfollow(u.id)
+                            }
+                        });
+
                     }}>Unfollow</button>
+                    : <button className="b-user_thumnail-follow m-follow" onClick={() => {
+                        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                            withCredentials: true,
+                            headers: {
+                                "API-KEY" : "40e4bdc3-98a4-4981-b544-301ca7484e7d"
+                            }
+                        }).then(responce => {
+                            if (responce.data.resultCode === 0) {
+                                props.follow(u.id)
+                            }
+                        });
+
+                    }}>Follow</button>
                 }
 
             </div>

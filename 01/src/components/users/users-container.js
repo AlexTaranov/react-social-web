@@ -13,7 +13,7 @@ class UsersListAPI extends  React.Component {
 
     componentDidMount() {
         this.props.toggleIsFetchingAC(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(responce => {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`, {withCredentials: true}).then(responce => {
             this.props.toggleIsFetchingAC(false);
             this.props.setUsersAC(responce.data.items);
             this.props.setUsersTotalCountAC(responce.data.totalCount);
@@ -23,7 +23,7 @@ class UsersListAPI extends  React.Component {
     onChangePage = (page_number) => {
         this.props.setPageAC(page_number);
         this.props.toggleIsFetchingAC(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page_number}&count=${this.props.pageSize}`).then(responce => {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${page_number}&count=${this.props.pageSize}`, {withCredentials: true}).then(responce => {
             this.props.toggleIsFetchingAC(false);
             this.props.setUsersAC(responce.data.items);
         });
@@ -58,6 +58,16 @@ let usersStateToProps = (state) => {
     }
 };
 
+
+export default connect(usersStateToProps, {
+    userFollowAC,
+    userUnfollowAC,
+    setUsersAC,
+    setPageAC,
+    setUsersTotalCountAC,
+    toggleIsFetchingAC
+})(UsersListAPI)
+
 // let usersDispatchToProps = (dispatch) => {
 //     return {
 //         follow: (id) => {
@@ -80,14 +90,3 @@ let usersStateToProps = (state) => {
 //         }
 //     }
 // };
-
-
-
-export default connect(usersStateToProps, {
-    userFollowAC,
-    userUnfollowAC,
-    setUsersAC,
-    setPageAC,
-    setUsersTotalCountAC,
-    toggleIsFetchingAC
-})(UsersListAPI)
